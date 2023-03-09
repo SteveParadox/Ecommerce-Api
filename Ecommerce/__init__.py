@@ -31,6 +31,7 @@ def create_app(config_class=Config):
     from Ecommerce.Home.route import main
     from Ecommerce.Admin.route import admin
     from Ecommerce.Payment.route import payment
+    from Ecommerce.Payment.Shipping.route import shipping
     from Ecommerce.Errors.handlers_api import errors
 
     app.register_blueprint(users)
@@ -40,5 +41,6 @@ def create_app(config_class=Config):
     app.register_blueprint(payment)
     app.register_blueprint(errors)
     app.register_blueprint(sellers)
+    app.register_blueprint(shipping)
 
     return app
