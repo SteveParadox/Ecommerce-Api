@@ -1,11 +1,23 @@
 from datetime import datetime
 from flask import *
-from Ecommerce import db, login_manager, app
+from Ecommerce import db, login_manager, app, jwt
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema, ModelSchema
 
 
+@jwt.user_identity_loader
+def identity_loader(admin):
+    return admin
 
-class Admin(db.Model):
+@jwt.unauthorized_loader
+def unauthorized_loader(callback):
+    return jsonify({'error': 'Access token is missing.'}), 401
+
+@jwt.invalid_token_loader
+def invalid_token_loader(callback):
+    return jsonify({'error': 'Invalid access token.'}), 401
+
+
+class Administrator(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
@@ -143,7 +155,7 @@ class ShippingAddress(db.Model):
     
 class AdminSchema(SQLAlchemyAutoSchema):
     class Meta:
-        model = Admin
+        model = Administrator
         load_instance = True
 
 class UserSchema(SQLAlchemyAutoSchema):

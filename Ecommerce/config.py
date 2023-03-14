@@ -2,6 +2,10 @@ import os
 
 class Config:
     SECRET_KEY = '795849f0d2328258710ae9c71cb4b5ea'
+    JWT_SECRET_KEY = '795849fyvuy890d2328258710ae9c71cb4b5ea'
+    JWT_DEFAULT_REALM= "Ecommerce"
+    JWT_ACCESS_TOKEN_EXPIRES = 86400  # 1 day in seconds
+
     ENV = 'dev'
 
     if ENV == 'dev':
