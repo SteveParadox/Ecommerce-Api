@@ -1,8 +1,10 @@
 from flask import jsonify
-from Ecommerce.model import Administrator, User
+from Ecommerce.model import *
 from Ecommerce.Admin.decorator import admin_required
 from Ecommerce import *
 import jwt
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+
 
 admin = Blueprint('admin', __name__)
 
@@ -36,18 +38,14 @@ def admin_login():
         return jsonify({'error': 'Invalid email or password'}), 401
     if not bcrypt.check_password_hash(admin.password, password):
         return jsonify({'error': 'Invalid email or password'}), 401
-    payload = {
-        'id': admin.id,
-        'email': admin.email,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
-    }
-    token = jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
-    return jsonify({'message': 'Login successful', 'token': token.decode('utf-8')}), 200
+    access_token = create_access_token(identity=admin.id)
+    
+    return jsonify({'message': 'Login successful', 'access_token': access_token}), 200
 
 
 
 @admin.route('/admin/users', methods=['GET'])
-#@admin_required
+@admin_required
 def get_all_users():
     users = User.query.all()
     user_schema = UserSchema(many=True)
@@ -55,7 +53,7 @@ def get_all_users():
     return jsonify(result)
 
 @admin.route('/admin/user/<int:user_id>', methods=['GET'])
-#@admin_required
+@admin_required
 def get_user_by_id(user_id):
     user = User.query.get_or_404(user_id)
     user_schema = UserSchema()
@@ -63,7 +61,7 @@ def get_user_by_id(user_id):
     return jsonify(result)
 
 @admin.route('/admin/users/<int:user_id>/status', methods=['PUT'])
-#@admin_required
+@admin_required
 def update_user_status(user_id):
     user = User.query.get_or_404(user_id)
     new_status = request.json.get('status')
@@ -73,7 +71,7 @@ def update_user_status(user_id):
 
 
 @admin.route('/admin/users/<int:user_id>/delete', methods=['DELETE'])
-#@admin_required
+@admin_required
 def delete_user(user_id):
     user = User.query.get_or_404(user_id)
     db.session.delete(user)
@@ -83,14 +81,14 @@ def delete_user(user_id):
 
 
 @admin.route('/admin/products', methods=['GET'])
-#@admin_required
+@admin_required
 def get_products():
     products = Product.query.all()
     return jsonify({'products': [product.to_dict() for product in products]})
 
 # Retrieve details for a specific product
 @admin.route('/admin/products/<int:id>', methods=['GET'])
-#@admin_required
+@admin_required
 def get_product(id):
     product = Product.query.get(id)
     if not product:
@@ -98,7 +96,7 @@ def get_product(id):
     return jsonify({'product': product.to_dict()})
 
 @admin.route('/admin/products', methods=['POST'])
-#@admin_required
+@admin_required
 def create_product():
     data = request.get_json()
     if not data:
@@ -109,7 +107,7 @@ def create_product():
     return jsonify({'product': product.to_dict()}), 201
 
 @admin.route('/admin/products/<int:id>/update', methods=['PUT'])
-#@admin_required
+@admin_required
 def update_product(id):
     product = Product.query.get(id)
     if not product:
@@ -136,7 +134,7 @@ def delete_product(id):
 
 
 @admin.route('/admin/orders', methods=['GET'])
-#@admin_required
+@admin_required
 def get_all_orders():
     orders = Order.query.all()
     if not orders:
@@ -172,14 +170,14 @@ def get_all_orders():
 
 
 @admin.route('/admin/brands', methods=['GET'])
-#@admin_required
+@admin_required
 def get_brands():
     brands = Brand.query.all()
     return jsonify({'brands': [brand.name for brand in brands]})
 
 
 @admin.route('/admin/create/category', methods=['POST'])
-#@admin_required
+@admin_required
 def categories():
     if request.method == 'GET':
         categories = Category.query.all()
@@ -195,7 +193,7 @@ def categories():
         return jsonify({'error': 'Method not allowed'}), 405
 
 @admin.route('/api/categories', methods=['GET'])
-#@admin_required
+@admin_required
 def list_admin_categories():
     category = Category.query.all()
     _schema = CategorySchema(many=True)
@@ -204,7 +202,7 @@ def list_admin_categories():
 
 
 @admin.route('/admin/orders/all', methods=['GET'])
-#@admin_required
+@admin_required
 def get_orders():
     orders = Order.query.filter_by().all()
     if not orders:
@@ -224,7 +222,7 @@ def get_orders():
     return jsonify({'orders': order_data}), 200
 
 @admin.route('/admin/orders/<int:order_id>', methods=['GET'])
-#@admin_required
+@admin_required
 def get_admin_orders(order_id):
     orders = Order.query.filter_by(id=order_id).first()
     if not orders:
@@ -243,7 +241,7 @@ def get_admin_orders(order_id):
     return jsonify({'orders': order_dict}), 200
 
 @admin.route('/admin/orders/<int:order_id>/status', methods=['GET'])
-#@admin_required
+@admin_required
 def get_admin_orders_status(order_id):
     data =request.get_json()
     status = data["status"]
@@ -277,7 +275,7 @@ def delete_order(current_user, order_id):
 
 
 @admin.route('/orders/<int:id>', methods=['PUT'])
-#@admin_required
+@admin_required
 def update_order_status(id):
     order = Order.query.get(id)
     if not order:
