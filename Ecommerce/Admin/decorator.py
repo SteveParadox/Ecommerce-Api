@@ -1,13 +1,28 @@
 from functools import wraps
-from flask import abort
-from flask_jwt_extended import get_jwt_identity
+import secrets
+from Ecommerce import app
+from Ecommerce.model import Administrator
+
+from flask_jwt import JWT, jwt_required, current_identity
 
 
-def admin_required(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        current_user = get_jwt_identity()
-        if not current_user.get('is_admin'):
-            abort(403, description='Admin privileges required')
-        return func(*args, **kwargs)
-    return wrapper
+def authenticate(email, password):
+    admin = Administrator.query.filter_by(email=email).first()
+    if admin and secrets.compare_digest(bcrypt.check_password_hash(admin.password, password), True):
+        return admin
+
+def identity(payload):
+    admin_id = payload['identity']
+    return Administrator.query.get(admin_id)
+
+jwt = JWT(app, authenticate, identity)
+
+def admin_required(f):
+    @wraps(f)
+    @jwt_required()
+    def decorated(*args, **kwargs):
+        admin = Administrator.query.filter_by(id=current_identity.id).first()
+        if not admin:
+            return jsonify({'error': 'Invalid admin token.'}), 401
+        return f(*args, **kwargs)
+    return decorated
