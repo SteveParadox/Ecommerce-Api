@@ -121,21 +121,20 @@ Deletes a user.
 URL: /admin/users/<user_id>/delete
 Method: DELETE
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Successfully deleted user <user_id>."
 }
+```
 Get All Products
 Retrieves a list of all products.
 
 URL: /admin/products
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "products": [
     {
@@ -153,15 +152,15 @@ Copy code
     ...
   ]
 }
+```
 Get Product by ID
 Retrieves details for a specific product.
 
 URL: /admin/products/<product_id>
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "product": {
     "id": 1,
@@ -170,23 +169,23 @@ Copy code
     ...
   }
 }
+```
 Create Product
 Creates a new product.
 
 URL: /admin/products
 Method: POST
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "name": "Product Name",
   "price": 9.99,
   ...
 }
+```
+```
 Response:
-json
-Copy code
 {
   "product": {
     "id": 1,
@@ -195,23 +194,24 @@ Copy code
     ...
   }
 }
+```
 Update Product
 Updates an existing product.
 
 URL: /admin/products/<product_id>/update
 Method: PUT
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "name": "Updated Product Name",
   "price": 14.99,
   ...
 }
+```
+```
 Response:
-json
-Copy code
+
 {
   "product": {
     "id": 1,
@@ -220,28 +220,29 @@ Copy code
     ...
   }
 }
-
+```
 Delete Product
 Deletes a product.
 
 URL: /admin/products/<product_id>/delete
 Method: DELETE
 Authorization: Bearer <access_token>
+```
 Response:
 json
 Copy code
 {
   "message": "Product deleted successfully"
 }
+```
 Get All Orders
 Retrieves a list of all orders.
 
 URL: /admin/orders
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "orders": [
     {
@@ -283,16 +284,15 @@ Copy code
     ...
   ]
 }
-
+```
 Get Brands
 Retrieves a list of all brands.
 
 URL: /admin/brands
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "brands": [
     "Brand 1",
@@ -300,6 +300,7 @@ Copy code
     ...
   ]
 }
+```
 Create Category
 Creates a new category or retrieves all categories.
 
