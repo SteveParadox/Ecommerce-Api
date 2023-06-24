@@ -393,3 +393,47 @@ Copy code
   }
 }
 
+Get Order Status
+Retrieves the status of a specific order.
+
+URL: /admin/orders/<order_id>/status
+Method: GET
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "orders": {
+    "status": "delivered"
+  }
+}
+Delete Order
+Deletes a specific order.
+
+URL: /admin/orders/<order_id>
+Method: DELETE
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Order deleted successfully"
+}
+Update Order Status
+Updates the status of a specific order.
+
+URL: /orders/<order_id>
+Method: PUT
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "status": "shipped"
+}
+Response:
+json
+Copy code
+{
+  "message": "Order status updated successfully"
+}
