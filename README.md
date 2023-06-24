@@ -4,13 +4,12 @@ Description
 This is an Ecommerce API that provides functionalities for managing users and products. 
 It allows administrators to register new admin accounts, perform user management operations, and manage products.
 
-##Installation
-Clone the repository:
+## Installation
+### Clone the repository:
 
 
 git clone https://github.com/your-username/ecommerce-api.git
-Navigate to the project directory:
-
+### Navigate to the project directory:
 cd ecommerce-api
 
 ## Table of Contents
