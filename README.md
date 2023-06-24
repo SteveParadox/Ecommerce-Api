@@ -2,7 +2,7 @@
 This is the documentation for the Flask Ecommerce Admin API. It provides endpoints for administering the Ecommerce application.
 
 Table of Contents
-Register Admin
+[Register Admin]
 Admin Login
 Get All Users
 Get User by ID
