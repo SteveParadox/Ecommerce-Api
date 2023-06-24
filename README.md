@@ -29,16 +29,14 @@ cd ecommerce-api
 ## Routes
 URL: /admin/register
 Method: POST
+```
 Request Body:
-``` 
 {
   "name": "Admin Name",
   "email": "admin@example.com",
   "password": "admin123"
 }
 Response:
-json
-Copy code
 {
   "message": "Admin created!"
 }
@@ -48,29 +46,26 @@ Allows an admin to log in and obtain an access token.
 
 URL: /admin/login
 Method: POST
+```
 Request Body:
-json
-Copy code
 {
   "email": "admin@example.com",
   "password": "admin123"
 }
 Response:
-json
-Copy code
 {
   "message": "Login successful",
   "access_token": "<access_token>"
 }
+```
 Get All Users
 Retrieves a list of all users.
 
 URL: /admin/users
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 [
   {
     "id": 1,
@@ -86,30 +81,30 @@ Copy code
   },
   ...
 ]
+```
 Get User by ID
 Retrieves a user by their ID.
 
 URL: /admin/user/<user_id>
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "id": 1,
   "name": "User 1",
   "email": "user1@example.com",
   "is_seller": true
 }
+```
 Update User Status
 Updates the status of a user.
 
 URL: /admin/users/<user_id>/status
 Method: PUT
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "status": true
 }
@@ -119,6 +114,7 @@ Copy code
 {
   "message": "Successfully updated user <user_id> status to <new_status>."
 }
+```
 Delete User
 Deletes a user.
 
