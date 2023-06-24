@@ -647,3 +647,69 @@ Copy code
   }
 ]
 
+Get Brand Products
+Retrieves a list of products belonging to a specific brand.
+
+URL: /brands/<int:brand_id>/products
+Method: GET
+Response:
+json
+Copy code
+{
+  "products": [
+    {
+      "name": "Product 1",
+      "price": 10.99
+    },
+    {
+      "name": "Product 2",
+      "price": 19.99
+    }
+  ]
+}
+Like Product
+Likes a specific product.
+
+URL: /api/products/<int:product_id>/like
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Product liked successfully!"
+}
+Dislike Product
+Dislikes a specific product.
+
+URL: /products/<int:product_id>/dislike
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Product disliked successfully."
+}
+Add Product to Cart
+Adds a product to the user's cart.
+
+URL: /products/cart/add
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "product_id": 1,
+  "quantity": 2
+}
+Response:
+json
+Copy code
+{
+  "message": "Product added to cart successfully."
+}
