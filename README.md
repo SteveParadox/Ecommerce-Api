@@ -713,3 +713,150 @@ Copy code
 {
   "message": "Product added to cart successfully."
 }
+
+View Cart
+Retrieves the items in the user's cart.
+
+URL: /products/cart
+Method: GET
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "cart_items": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "product_name": "Product 1",
+      "quantity": 2,
+      "price": 10.99
+    },
+    {
+      "id": 2,
+      "product_id": 2,
+      "product_name": "Product 2",
+      "quantity": 1,
+      "price": 19.99
+    }
+  ]
+}
+Add Review
+Adds a review for a specific product.
+
+URL: /api/products/<int:product_id>/reviews
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "rating": 4.5,
+  "comment": "Great product!"
+}
+Response:
+json
+Copy code
+{
+  "message": "Review added successfully"
+}
+Get Products by Category
+Retrieves a list of products belonging to a specific category.
+
+URL: /products/<category>
+Method: GET
+Response:
+json
+Copy code
+{
+  "category": "Electronics",
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 10.99,
+      "description": "Description 1"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 19.99,
+      "description": "Description 2"
+    }
+  ]
+}
+Place Order
+Places an order for the items in the user's cart.
+
+URL: /api/place/order
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Orders placed successfully"
+}
+Get Orders
+Retrieves a list of orders placed by the user.
+
+URL: /api/orders
+Method: GET
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "orders": [
+    {
+      "id": 1,
+      "product": "Product 1",
+      "quantity": 2,
+      "total_price": 21.98
+    },
+    {
+      "id": 2,
+      "product": "Product 2",
+      "quantity": 1,
+      "total_price": 19.99
+    }
+  ]
+}
+Update Order
+Updates the details of a specific order.
+
+URL: /api/orders/<int:order_id>/update
+Method: PUT
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "product_id": 2,
+  "quantity": 3
+}
+Response:
+json
+Copy code
+{
+  "message": "Order updated successfully"
+}
+Get Product Review
+Retrieves the review for a specific product.
+
+URL: /product/<int:product_id>/review
+Method: GET
+Response:
+json
+Copy code
+{
+  "review": {
+    "rating": 4.5,
+    "comment": "Great product!"
+  }
+}
