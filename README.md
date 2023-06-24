@@ -307,22 +307,22 @@ Creates a new category or retrieves all categories.
 URL: /admin/create/category
 Method: POST (Create Category) or GET (Retrieve Categories)
 Authorization: Bearer <access_token>
+```
 Request Body (Create Category):
-json
-Copy code
 {
   "name": ["Category 1", "Category 2", ...]
 }
+```
 Response (Create Category):
-json
-Copy code
+
 {
   "id": 1,
   "name": "Category 1"
 }
+```
+```
 Response (Retrieve Categories):
-json
-Copy code
+
 [
   {
     "id": 1,
@@ -334,15 +334,15 @@ Copy code
   },
   ...
 ]
+```
 List Admin Categories
 Retrieves a list of all categories.
 
 URL: /api/categories
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "Categories": [
     {
@@ -356,15 +356,16 @@ Copy code
     ...
   ]
 }
+```
 Get All Orders
 Retrieves a list of all orders.
 
 URL: /admin/orders/all
 Method: GET
 Authorization: Bearer <access_token>
+
+```
 Response:
-json
-Copy code
 {
   "orders": [
     {
@@ -382,6 +383,7 @@ Copy code
     ...
   ]
 }
+```
 Get Order by ID
 Retrieves details for a specific order.
 
