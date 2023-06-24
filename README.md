@@ -30,7 +30,7 @@ cd ecommerce-api
 URL: /admin/register
 Method: POST
 Request Body:
-(``` 
+``` 
 {
   "name": "Admin Name",
   "email": "admin@example.com",
@@ -42,7 +42,7 @@ Copy code
 {
   "message": "Admin created!"
 }
-```)
+```
 Admin Login
 Allows an admin to log in and obtain an access token.
 
