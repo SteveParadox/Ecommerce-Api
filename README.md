@@ -943,4 +943,240 @@ Copy code
 }
 
 
+Register Seller
+Register the current user as a seller.
 
+URL: /api/sellers/register
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Congratulations, You are now a seller"
+}
+Add Product
+Add a new product for the current seller.
+
+URL: /api/sellers/products
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "name": "Product Name",
+  "description": "Product Description",
+  "price": 10.99,
+  "quantity": 100,
+  "category": "Category Name"
+}
+Response:
+json
+Copy code
+{
+  "message": "Product added successfully!"
+}
+Get Seller Products
+Get all products associated with the current seller.
+
+URL: /api/sellers/products
+Method: GET
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "description": "Product 1 Description",
+      "price": 10.99,
+      "quantity": 100,
+      "seller_id": 123
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "Product 2 Description",
+      "price": 19.99,
+      "quantity": 50,
+      "seller_id": 123
+    }
+  ]
+}
+Update Product
+Update a product associated with the current seller.
+
+URL: /api/seller/products/<id>/update
+Method: PUT
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "name": "Updated Product Name",
+  "description": "Updated Product Description",
+  "price": 15.99,
+  "quantity": 200
+}
+Response:
+json
+Copy code
+{
+  "message": "Product updated successfully!"
+}
+
+
+Delete Product
+Delete a product associated with the current seller.
+
+URL: /api/seller/products/<id>/delete
+Method: DELETE
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Product deleted successfully!"
+}
+Create Brand
+Create a new brand for the current seller.
+
+URL: /brand/create
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "name": "Brand Name"
+}
+Response:
+json
+Copy code
+{
+  "message": "Brand created successfully",
+  "brand": "Brand Name"
+}
+Update Brand
+Update a brand associated with the current seller.
+
+URL: /brand/<brand_id>/update
+Method: PUT
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "name": "Updated Brand Name"
+}
+Response:
+json
+Copy code
+{
+  "message": "Brand updated successfully",
+  "brand": "Updated Brand Name"
+}
+Delete Brand
+Delete a brand associated with the current seller.
+
+URL: /brand/<brand_id>/delete
+Method: DELETE
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Brand deleted successfully"
+}
+Create Product
+Create a new product under a specific brand for the current seller.
+
+URL: /brand/<brand_id>/add/product
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Request Body:
+json
+Copy code
+{
+  "name": "Product Name",
+  "price": 9.99,
+  "description": "Product Description",
+  "quantity": 100,
+  "category": "Category Name"
+}
+Response:
+json
+Copy code
+{
+  "message": "Product created successfully",
+  "product": {
+    "name": "Product Name",
+    "price": 9.99
+  }
+}
+View Sold Products
+Retrieve a list of products sold by the current seller.
+
+URL: /products/sold
+Method: GET
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "sold_products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 10.99
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 19.99
+    }
+  ]
+}
+Payment Ledger
+Retrieve the payment ledger for the current seller, including information about orders and customers.
+
+URL: /payment_ledger
+Method: GET
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "payment_ledger": [
+    {
+      "order_id": 1,
+      "customer_name": "John Doe",
+      "product_name": "Product 1",
+      "product_quantity": 2,
+      "payment_amount": 21.98,
+      "payment_status": "Completed"
+    },
+    {
+      "order_id": 2,
+      "customer_name": "Jane Smith",
+      "product_name": "Product 2",
+      "product_quantity": 1,
+      "payment_amount": 19.99,
+      "payment_status": "Pending"
+    }
+  ]
+}
