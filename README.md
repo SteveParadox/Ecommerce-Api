@@ -13,7 +13,7 @@ Navigate to the project directory:
 
 cd ecommerce-api
 
-##Table of Contents
+## Table of Contents
 *Register Admin
 *Admin Login
 *Get All Users
