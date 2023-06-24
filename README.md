@@ -437,3 +437,78 @@ Copy code
 {
   "message": "Order status updated successfully"
 }
+
+Home
+Displays the latest products available.
+
+URL: /api/home
+Method: GET
+Response:
+json
+Copy code
+{
+  "latest_products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "description": "Description of Product 1",
+      "price": 10.99,
+      "category": {
+        "id": 1,
+        "name": "Category 1"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "Description of Product 2",
+      "price": 19.99,
+      "category": {
+        "id": 2,
+        "name": "Category 2"
+      }
+    }
+  ]
+}
+Recommended Products
+Displays recommended products for the authenticated user.
+
+URL: /recommended/products
+Method: GET
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "latest_products": "Coming soon"
+}
+Search
+Performs a search for products based on the provided query.
+
+URL: /api/search?q=<query>
+Method: GET
+Response:
+json
+Copy code
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "description": "Description of Product 1",
+    "price": 10.99,
+    "category": {
+      "id": 1,
+      "name": "Category 1"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Product 2",
+    "description": "Description of Product 2",
+    "price": 19.99,
+    "category": {
+      "id": 2,
+      "name": "Category 2"
+    }
+  }
+]
