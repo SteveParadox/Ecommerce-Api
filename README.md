@@ -512,3 +512,138 @@ Copy code
     }
   }
 ]
+
+Create Category
+Creates a new category.
+
+URL: /api/create/category
+Method: POST
+Request Body:
+json
+Copy code
+{
+  "name": ["Category 1", "Category 2"]
+}
+Response:
+json
+Copy code
+{
+  "id": 1,
+  "name": "Category 1"
+}
+List Categories
+Retrieves a list of all categories.
+
+URL: /api/categories
+Method: GET
+Response:
+json
+Copy code
+{
+  "Categories": [
+    {
+      "id": 1,
+      "name": "Category 1"
+    },
+    {
+      "id": 2,
+      "name": "Category 2"
+    }
+  ]
+}
+Get All Products
+Retrieves a list of all products.
+
+URL: /api/products
+Method: GET
+Response:
+json
+Copy code
+[
+  {
+    "id": 1,
+    "name": "Product 1",
+    "price": 10.99
+  },
+  {
+    "id": 2,
+    "name": "Product 2",
+    "price": 19.99
+  }
+]
+Get Product Details
+Retrieves details of a specific product.
+
+URL: /api/products/<int:product_id>
+Method: GET
+Response:
+json
+Copy code
+{
+  "name": "Product 1",
+  "price": 10.99,
+  "description": "Description of Product 1"
+}
+or
+
+json
+Copy code
+{
+  "name": "Product 1",
+  "price": 10.99,
+  "description": "Description of Product 1",
+  "brand": "Brand 1"
+}
+Search Brands
+Performs a search for brands based on the provided query and retrieves associated products.
+
+URL: /api/brand/search?q=<query>
+Method: GET
+Response:
+json
+Copy code
+[
+  {
+    "id": 1,
+    "name": "Brand 1",
+    "products": [
+      {
+        "id": 1,
+        "name": "Product 1",
+        "description": "Description of Product 1",
+        "price": 10.99,
+        "category": {
+          "id": 1,
+          "name": "Category 1"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Product 2",
+        "description": "Description of Product 2",
+        "price": 19.99,
+        "category": {
+          "id": 2,
+          "name": "Category 2"
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Brand 2",
+    "products": [
+      {
+        "id": 3,
+        "name": "Product 3",
+        "description": "Description of Product 3",
+        "price": 15.99,
+        "category": {
+          "id": 3,
+          "name": "Category 3"
+        }
+      }
+    ]
+  }
+]
+
