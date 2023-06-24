@@ -14,18 +14,18 @@ Navigate to the project directory:
 cd ecommerce-api
 
 Table of Contents
-Register Admin
-Admin Login
-Get All Users
-Get User by ID
-Update User Status
-Delete User
-Get All Products
-Get Product by ID
-Create Product
-Update Product
-Register Admin
-Creates a new admin account.
+*Register Admin
+*Admin Login
+*Get All Users
+*Get User by ID
+*Update User Status
+*Delete User
+*Get All Products
+*Get Product by ID
+*Create Product
+*Update Product
+*Register Admin
+*Creates a new admin account.
 
 URL: /admin/register
 Method: POST
