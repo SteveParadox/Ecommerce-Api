@@ -860,3 +860,17 @@ Copy code
     "comment": "Great product!"
   }
 }
+Get Product Ratings
+Retrieves a dictionary containing the ratings for each product keyed by product ID.
+
+URL: /product/ratings
+Method: GET
+Response:
+json
+Copy code
+{
+  "product_ratings": {
+    "1": [4.5, 5.0],
+    "2": [3.5, 4.0, 3.0]
+  }
+}
