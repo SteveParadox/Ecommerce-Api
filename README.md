@@ -1,8 +1,20 @@
 # EcommerceApi
 This is the documentation for the Flask Ecommerce Admin API. It provides endpoints for administering the Ecommerce application.
+Description
+This is an Ecommerce API that provides functionalities for managing users and products. 
+It allows administrators to register new admin accounts, perform user management operations, and manage products.
+
+Installation
+Clone the repository:
+
+
+git clone https://github.com/your-username/ecommerce-api.git
+Navigate to the project directory:
+
+cd ecommerce-api
 
 Table of Contents
-[Register Admin]
+Register Admin
 Admin Login
 Get All Users
 Get User by ID
