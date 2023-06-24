@@ -874,3 +874,73 @@ Copy code
     "2": [3.5, 4.0, 3.0]
   }
 }
+
+
+User Registration
+Register a new user with the provided details.
+
+URL: /api/register
+Method: POST
+Request Body:
+json
+Copy code
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@example.com",
+  "password": "password",
+  "gender": "Male",
+  "phone_number": "1234567890",
+  "country": "USA",
+  "date_of_birth": "1990-01-01",
+  "address": "123 Main St, City, Country"
+}
+Response:
+json
+Copy code
+{
+  "message": "User created!"
+}
+User Verification
+Verify a user's account. This endpoint requires admin privileges.
+
+URL: /api/verify/<public_id>
+Method: PUT
+Request Headers:
+Authorization: Bearer <admin_access_token>
+Response:
+json
+Copy code
+{
+  "message": "User verified!"
+}
+User Login
+Authenticate and login a user.
+
+URL: /api/login
+Method: POST
+Request Headers:
+Authorization: Basic <base64_encoded_credentials>
+Response:
+json
+Copy code
+{
+  "message": "Login successful!",
+  "token": "<access_token>"
+}
+User Logout
+Logout the currently logged-in user.
+
+URL: /api/logout
+Method: POST
+Request Headers:
+Authorization: Bearer <access_token>
+Response:
+json
+Copy code
+{
+  "message": "Logout successful!"
+}
+
+
+
