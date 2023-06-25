@@ -27,7 +27,7 @@ cd ecommerce-api
 * Creates a new admin account.
 
 ## Routes
-URL: /admin/register
+### ```URL: /admin/register```
 Method: POST
 ```
 Request Body:
