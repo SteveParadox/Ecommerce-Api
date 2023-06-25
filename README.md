@@ -44,7 +44,7 @@ Response:
 Admin Login
 Allows an admin to log in and obtain an access token.
 
-URL: /admin/login
+### ``` URL: /admin/login ```
 Method: POST
 ```
 Request Body:
@@ -61,7 +61,7 @@ Response:
 Get All Users
 Retrieves a list of all users.
 
-URL: /admin/users
+### ``` URL: /admin/users ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
@@ -85,7 +85,7 @@ Response:
 Get User by ID
 Retrieves a user by their ID.
 
-URL: /admin/user/<user_id>
+### ``` URL: /admin/user/<user_id> ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
@@ -100,7 +100,7 @@ Response:
 Update User Status
 Updates the status of a user.
 
-URL: /admin/users/<user_id>/status
+### ``` URL: /admin/users/<user_id>/status ```
 Method: PUT
 Authorization: Bearer <access_token>
 ```
@@ -109,8 +109,6 @@ Request Body:
   "status": true
 }
 Response:
-json
-Copy code
 {
   "message": "Successfully updated user <user_id> status to <new_status>."
 }
@@ -118,7 +116,7 @@ Copy code
 Delete User
 Deletes a user.
 
-URL: /admin/users/<user_id>/delete
+### ``` URL: /admin/users/<user_id>/delete ```
 Method: DELETE
 Authorization: Bearer <access_token>
 ```
@@ -130,7 +128,7 @@ Response:
 Get All Products
 Retrieves a list of all products.
 
-URL: /admin/products
+### ``` URL: /admin/products ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
@@ -156,7 +154,7 @@ Response:
 Get Product by ID
 Retrieves details for a specific product.
 
-URL: /admin/products/<product_id>
+### ``` URL: /admin/products/<product_id> ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
@@ -173,7 +171,7 @@ Response:
 Create Product
 Creates a new product.
 
-URL: /admin/products
+### ``` URL: /admin/products ```
 Method: POST
 Authorization: Bearer <access_token>
 ```
@@ -196,7 +194,7 @@ Response:
 Update Product
 Updates an existing product.
 
-URL: /admin/products/<product_id>/update
+### ``` URL: /admin/products/<product_id>/update ```
 Method: PUT
 Authorization: Bearer <access_token>
 ```
@@ -220,13 +218,11 @@ Response:
 Delete Product
 Deletes a product.
 
-URL: /admin/products/<product_id>/delete
+### ``` URL: /admin/products/<product_id>/delete ```
 Method: DELETE
 Authorization: Bearer <access_token>
 ```
 Response:
-json
-Copy code
 {
   "message": "Product deleted successfully"
 }
@@ -234,7 +230,7 @@ Copy code
 Get All Orders
 Retrieves a list of all orders.
 
-URL: /admin/orders
+### ``` URL: /admin/orders ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
@@ -284,7 +280,7 @@ Response:
 Get Brands
 Retrieves a list of all brands.
 
-URL: /admin/brands
+### ``` URL: /admin/brands ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
@@ -300,7 +296,7 @@ Response:
 Create Category
 Creates a new category or retrieves all categories.
 
-URL: /admin/create/category
+### ``` URL: /admin/create/category ```
 Method: POST (Create Category) or GET (Retrieve Categories)
 Authorization: Bearer <access_token>
 ```
@@ -331,7 +327,7 @@ Response (Retrieve Categories):
 List Admin Categories
 Retrieves a list of all categories.
 
-URL: /api/categories
+### ``` URL: /api/categories ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
@@ -353,7 +349,7 @@ Response:
 Get All Orders
 Retrieves a list of all orders.
 
-URL: /admin/orders/all
+### ``` URL: /admin/orders/all ```
 Method: GET
 Authorization: Bearer <access_token>
 
@@ -380,7 +376,7 @@ Response:
 Get Order by ID
 Retrieves details for a specific order.
 
-URL: /admin/orders/<order_id>
+### ``` URL: /admin/orders/<order_id> ```
 Method: GET
 Authorization: Bearer <access_token>
 ```
