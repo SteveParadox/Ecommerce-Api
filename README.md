@@ -782,12 +782,12 @@ URL: /api/place/order
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Orders placed successfully"
 }
+```
 Get Orders
 Retrieves a list of orders placed by the user.
 
@@ -795,9 +795,8 @@ URL: /api/orders
 Method: GET
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "orders": [
     {
@@ -814,6 +813,7 @@ Copy code
     }
   ]
 }
+```
 Update Order
 Updates the details of a specific order.
 
@@ -821,57 +821,53 @@ URL: /api/orders/<int:order_id>/update
 Method: PUT
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "product_id": 2,
   "quantity": 3
 }
 Response:
-json
-Copy code
 {
   "message": "Order updated successfully"
 }
+```
 Get Product Review
 Retrieves the review for a specific product.
 
 URL: /product/<int:product_id>/review
 Method: GET
+```
 Response:
-json
-Copy code
 {
   "review": {
     "rating": 4.5,
     "comment": "Great product!"
   }
 }
+```
 Get Product Ratings
 Retrieves a dictionary containing the ratings for each product keyed by product ID.
 
 URL: /product/ratings
 Method: GET
+```
 Response:
-json
-Copy code
 {
   "product_ratings": {
     "1": [4.5, 5.0],
     "2": [3.5, 4.0, 3.0]
   }
 }
-
+```
 
 User Registration
 Register a new user with the provided details.
 
 URL: /api/register
 Method: POST
+```
 Request Body:
-json
-Copy code
 {
   "first_name": "John",
   "last_name": "Doe",
@@ -884,11 +880,10 @@ Copy code
   "address": "123 Main St, City, Country"
 }
 Response:
-json
-Copy code
 {
   "message": "User created!"
 }
+```
 User Verification
 Verify a user's account. This endpoint requires admin privileges.
 
@@ -896,12 +891,12 @@ URL: /api/verify/<public_id>
 Method: PUT
 Request Headers:
 Authorization: Bearer <admin_access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "User verified!"
 }
+```
 User Login
 Authenticate and login a user.
 
@@ -909,13 +904,13 @@ URL: /api/login
 Method: POST
 Request Headers:
 Authorization: Basic <base64_encoded_credentials>
+```
 Response:
-json
-Copy code
 {
   "message": "Login successful!",
   "token": "<access_token>"
 }
+```
 User Logout
 Logout the currently logged-in user.
 
@@ -923,12 +918,12 @@ URL: /api/logout
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Logout successful!"
 }
+```
 
 
 Register Seller
@@ -938,12 +933,12 @@ URL: /api/sellers/register
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Congratulations, You are now a seller"
 }
+```
 Add Product
 Add a new product for the current seller.
 
@@ -951,9 +946,8 @@ URL: /api/sellers/products
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "name": "Product Name",
   "description": "Product Description",
@@ -962,11 +956,10 @@ Copy code
   "category": "Category Name"
 }
 Response:
-json
-Copy code
 {
   "message": "Product added successfully!"
 }
+```
 Get Seller Products
 Get all products associated with the current seller.
 
@@ -974,9 +967,8 @@ URL: /api/sellers/products
 Method: GET
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "products": [
     {
@@ -997,6 +989,7 @@ Copy code
     }
   ]
 }
+```
 Update Product
 Update a product associated with the current seller.
 
@@ -1004,9 +997,8 @@ URL: /api/seller/products/<id>/update
 Method: PUT
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "name": "Updated Product Name",
   "description": "Updated Product Description",
@@ -1014,12 +1006,10 @@ Copy code
   "quantity": 200
 }
 Response:
-json
-Copy code
 {
   "message": "Product updated successfully!"
 }
-
+```
 
 Delete Product
 Delete a product associated with the current seller.
@@ -1028,12 +1018,12 @@ URL: /api/seller/products/<id>/delete
 Method: DELETE
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Product deleted successfully!"
 }
+```
 Create Brand
 Create a new brand for the current seller.
 
@@ -1041,19 +1031,17 @@ URL: /brand/create
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "name": "Brand Name"
 }
 Response:
-json
-Copy code
 {
   "message": "Brand created successfully",
   "brand": "Brand Name"
 }
+```
 Update Brand
 Update a brand associated with the current seller.
 
@@ -1061,19 +1049,17 @@ URL: /brand/<brand_id>/update
 Method: PUT
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "name": "Updated Brand Name"
 }
 Response:
-json
-Copy code
 {
   "message": "Brand updated successfully",
   "brand": "Updated Brand Name"
 }
+```
 Delete Brand
 Delete a brand associated with the current seller.
 
@@ -1081,12 +1067,12 @@ URL: /brand/<brand_id>/delete
 Method: DELETE
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Brand deleted successfully"
 }
+```
 Create Product
 Create a new product under a specific brand for the current seller.
 
@@ -1094,9 +1080,8 @@ URL: /brand/<brand_id>/add/product
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "name": "Product Name",
   "price": 9.99,
@@ -1105,8 +1090,6 @@ Copy code
   "category": "Category Name"
 }
 Response:
-json
-Copy code
 {
   "message": "Product created successfully",
   "product": {
@@ -1114,16 +1097,16 @@ Copy code
     "price": 9.99
   }
 }
+```
 View Sold Products
 Retrieve a list of products sold by the current seller.
 
 URL: /products/sold
 Method: GET
+```
 Request Headers:
 Authorization: Bearer <access_token>
 Response:
-json
-Copy code
 {
   "sold_products": [
     {
@@ -1138,16 +1121,16 @@ Copy code
     }
   ]
 }
+```
 Payment Ledger
 Retrieve the payment ledger for the current seller, including information about orders and customers.
 
 URL: /payment_ledger
 Method: GET
+```
 Request Headers:
 Authorization: Bearer <access_token>
 Response:
-json
-Copy code
 {
   "payment_ledger": [
     {
@@ -1168,3 +1151,4 @@ Copy code
     }
   ]
 }
+```
