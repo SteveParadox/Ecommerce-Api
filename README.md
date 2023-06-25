@@ -183,8 +183,6 @@ Request Body:
   "price": 9.99,
   ...
 }
-```
-```
 Response:
 {
   "product": {
@@ -208,8 +206,6 @@ Request Body:
   "price": 14.99,
   ...
 }
-```
-```
 Response:
 
 {
@@ -312,15 +308,12 @@ Request Body (Create Category):
 {
   "name": ["Category 1", "Category 2", ...]
 }
-```
 Response (Create Category):
 
 {
   "id": 1,
   "name": "Category 1"
 }
-```
-```
 Response (Retrieve Categories):
 
 [
@@ -390,9 +383,9 @@ Retrieves details for a specific order.
 URL: /admin/orders/<order_id>
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
+
 {
   "orders": {
     "id": 1,
@@ -403,52 +396,49 @@ Copy code
     "total_price": 99.99
   }
 }
-
+```
 Get Order Status
 Retrieves the status of a specific order.
 
 URL: /admin/orders/<order_id>/status
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "orders": {
     "status": "delivered"
   }
 }
+```
 Delete Order
 Deletes a specific order.
 
 URL: /admin/orders/<order_id>
 Method: DELETE
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Order deleted successfully"
 }
+```
 Update Order Status
 Updates the status of a specific order.
 
 URL: /orders/<order_id>
 Method: PUT
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "status": "shipped"
 }
 Response:
-json
-Copy code
 {
   "message": "Order status updated successfully"
 }
-
+```
 Home
 Displays the latest products available.
 
