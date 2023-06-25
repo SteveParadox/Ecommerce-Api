@@ -444,9 +444,8 @@ Displays the latest products available.
 
 URL: /api/home
 Method: GET
+```
 Response:
-json
-Copy code
 {
   "latest_products": [
     {
@@ -471,26 +470,26 @@ Copy code
     }
   ]
 }
+```
 Recommended Products
 Displays recommended products for the authenticated user.
 
 URL: /recommended/products
 Method: GET
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "latest_products": "Coming soon"
 }
+```
 Search
 Performs a search for products based on the provided query.
 
 URL: /api/search?q=<query>
 Method: GET
+```
 Response:
-json
-Copy code
 [
   {
     "id": 1,
@@ -513,33 +512,30 @@ Copy code
     }
   }
 ]
-
+```
 Create Category
 Creates a new category.
 
 URL: /api/create/category
 Method: POST
+```
 Request Body:
-json
-Copy code
 {
   "name": ["Category 1", "Category 2"]
 }
 Response:
-json
-Copy code
 {
   "id": 1,
   "name": "Category 1"
 }
+```
 List Categories
 Retrieves a list of all categories.
 
 URL: /api/categories
 Method: GET
+```
 Response:
-json
-Copy code
 {
   "Categories": [
     {
@@ -552,14 +548,14 @@ Copy code
     }
   ]
 }
+```
 Get All Products
 Retrieves a list of all products.
 
 URL: /api/products
 Method: GET
+```
 Response:
-json
-Copy code
 [
   {
     "id": 1,
@@ -572,37 +568,33 @@ Copy code
     "price": 19.99
   }
 ]
+```
 Get Product Details
 Retrieves details of a specific product.
 
 URL: /api/products/<int:product_id>
 Method: GET
+```
 Response:
-json
-Copy code
 {
   "name": "Product 1",
   "price": 10.99,
   "description": "Description of Product 1"
 }
-or
-
-json
-Copy code
 {
   "name": "Product 1",
   "price": 10.99,
   "description": "Description of Product 1",
   "brand": "Brand 1"
 }
+```
 Search Brands
 Performs a search for brands based on the provided query and retrieves associated products.
 
 URL: /api/brand/search?q=<query>
 Method: GET
+```
 Response:
-json
-Copy code
 [
   {
     "id": 1,
@@ -647,15 +639,14 @@ Copy code
     ]
   }
 ]
-
+```
 Get Brand Products
 Retrieves a list of products belonging to a specific brand.
 
 URL: /brands/<int:brand_id>/products
 Method: GET
+```
 Response:
-json
-Copy code
 {
   "products": [
     {
@@ -668,6 +659,7 @@ Copy code
     }
   ]
 }
+```
 Like Product
 Likes a specific product.
 
@@ -675,12 +667,12 @@ URL: /api/products/<int:product_id>/like
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Product liked successfully!"
 }
+```
 Dislike Product
 Dislikes a specific product.
 
@@ -688,12 +680,12 @@ URL: /products/<int:product_id>/dislike
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "message": "Product disliked successfully."
 }
+```
 Add Product to Cart
 Adds a product to the user's cart.
 
@@ -701,20 +693,17 @@ URL: /products/cart/add
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "product_id": 1,
   "quantity": 2
 }
 Response:
-json
-Copy code
 {
   "message": "Product added to cart successfully."
 }
-
+```
 View Cart
 Retrieves the items in the user's cart.
 
@@ -722,9 +711,8 @@ URL: /products/cart
 Method: GET
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Response:
-json
-Copy code
 {
   "cart_items": [
     {
@@ -743,6 +731,7 @@ Copy code
     }
   ]
 }
+```
 Add Review
 Adds a review for a specific product.
 
@@ -750,27 +739,24 @@ URL: /api/products/<int:product_id>/reviews
 Method: POST
 Request Headers:
 Authorization: Bearer <access_token>
+```
 Request Body:
-json
-Copy code
 {
   "rating": 4.5,
   "comment": "Great product!"
 }
 Response:
-json
-Copy code
 {
   "message": "Review added successfully"
 }
+```
 Get Products by Category
 Retrieves a list of products belonging to a specific category.
 
 URL: /products/<category>
 Method: GET
+```
 Response:
-json
-Copy code
 {
   "category": "Electronics",
   "products": [
@@ -788,6 +774,7 @@ Copy code
     }
   ]
 }
+```
 Place Order
 Places an order for the items in the user's cart.
 
