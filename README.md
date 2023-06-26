@@ -45,7 +45,7 @@ Admin Login
 Allows an admin to log in and obtain an access token.
 
 ### ``` URL: /admin/login ```
-Method: POST
+### Method: POST
 ```
 Request Body:
 {
@@ -62,7 +62,7 @@ Get All Users
 Retrieves a list of all users.
 
 ### ``` URL: /admin/users ```
-Method: GET
+### Method: GET
 Authorization: Bearer <access_token>
 ```
 Response:
@@ -86,8 +86,8 @@ Get User by ID
 Retrieves a user by their ID.
 
 ### ``` URL: /admin/user/<user_id> ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -101,8 +101,8 @@ Update User Status
 Updates the status of a user.
 
 ### ``` URL: /admin/users/<user_id>/status ```
-Method: PUT
-Authorization: Bearer <access_token>
+### Method: PUT
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -117,8 +117,8 @@ Delete User
 Deletes a user.
 
 ### ``` URL: /admin/users/<user_id>/delete ```
-Method: DELETE
-Authorization: Bearer <access_token>
+### Method: DELETE
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -129,8 +129,8 @@ Get All Products
 Retrieves a list of all products.
 
 ### ``` URL: /admin/products ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -155,8 +155,8 @@ Get Product by ID
 Retrieves details for a specific product.
 
 ### ``` URL: /admin/products/<product_id> ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -172,8 +172,8 @@ Create Product
 Creates a new product.
 
 ### ``` URL: /admin/products ```
-Method: POST
-Authorization: Bearer <access_token>
+### Method: POST
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -195,8 +195,8 @@ Update Product
 Updates an existing product.
 
 ### ``` URL: /admin/products/<product_id>/update ```
-Method: PUT
-Authorization: Bearer <access_token>
+### Method: PUT
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -219,8 +219,8 @@ Delete Product
 Deletes a product.
 
 ### ``` URL: /admin/products/<product_id>/delete ```
-Method: DELETE
-Authorization: Bearer <access_token>
+### Method: DELETE
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -231,8 +231,8 @@ Get All Orders
 Retrieves a list of all orders.
 
 ### ``` URL: /admin/orders ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -281,8 +281,8 @@ Get Brands
 Retrieves a list of all brands.
 
 ### ``` URL: /admin/brands ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -297,8 +297,8 @@ Create Category
 Creates a new category or retrieves all categories.
 
 ### ``` URL: /admin/create/category ```
-Method: POST (Create Category) or GET (Retrieve Categories)
-Authorization: Bearer <access_token>
+### Method: POST (Create Category) or GET (Retrieve Categories)
+### Authorization: Bearer <access_token>
 ```
 Request Body (Create Category):
 {
@@ -328,8 +328,8 @@ List Admin Categories
 Retrieves a list of all categories.
 
 ### ``` URL: /api/categories ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -350,8 +350,8 @@ Get All Orders
 Retrieves a list of all orders.
 
 ### ``` URL: /admin/orders/all ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 
 ```
 Response:
@@ -377,8 +377,8 @@ Get Order by ID
 Retrieves details for a specific order.
 
 ### ``` URL: /admin/orders/<order_id> ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 
@@ -397,8 +397,8 @@ Get Order Status
 Retrieves the status of a specific order.
 
 ### ``` URL: /admin/orders/<order_id>/status ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -411,8 +411,8 @@ Delete Order
 Deletes a specific order.
 
 ### ``` URL: /admin/orders/<order_id> ```
-Method: DELETE
-Authorization: Bearer <access_token>
+### Method: DELETE
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -423,8 +423,8 @@ Update Order Status
 Updates the status of a specific order.
 
 ### ``` URL: /orders/<order_id> ```
-Method: PUT
-Authorization: Bearer <access_token>
+### Method: PUT
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
