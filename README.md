@@ -439,7 +439,7 @@ Home
 Displays the latest products available.
 
 ### ``` URL: /api/home ```
-Method: GET
+### Method: GET
 ```
 Response:
 {
@@ -471,8 +471,8 @@ Recommended Products
 Displays recommended products for the authenticated user.
 
 ### ``` URL: /recommended/products ```
-Method: GET
-Authorization: Bearer <access_token>
+### Method: GET
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -483,7 +483,7 @@ Search
 Performs a search for products based on the provided query.
 
 ### ``` URL: /api/search?q=<query> ```
-Method: GET
+### Method: GET
 ```
 Response:
 [
@@ -513,7 +513,7 @@ Create Category
 Creates a new category.
 
 ### ``` URL: /api/create/category ```
-Method: POST
+### Method: POST
 ```
 Request Body:
 {
@@ -529,7 +529,7 @@ List Categories
 Retrieves a list of all categories.
 
 ### ``` URL: /api/categories ```
-Method: GET
+### Method: GET
 ```
 Response:
 {
@@ -549,7 +549,7 @@ Get All Products
 Retrieves a list of all products.
 
 ### ``` URL: /api/products ```
-Method: GET
+### Method: GET
 ```
 Response:
 [
@@ -569,7 +569,7 @@ Get Product Details
 Retrieves details of a specific product.
 
 ### ``` URL: /api/products/<int:product_id> ```
-Method: GET
+### Method: GET
 ```
 Response:
 {
@@ -588,7 +588,7 @@ Search Brands
 Performs a search for brands based on the provided query and retrieves associated products.
 
 ### ``` URL: /api/brand/search?q=<query> ```
-Method: GET
+### Method: GET
 ```
 Response:
 [
@@ -640,7 +640,7 @@ Get Brand Products
 Retrieves a list of products belonging to a specific brand.
 
 ### ``` URL: /brands/<int:brand_id>/products ```
-Method: GET
+### Method: GET
 ```
 Response:
 {
@@ -660,9 +660,8 @@ Like Product
 Likes a specific product.
 
 ### ``` URL: /api/products/<int:product_id>/like ```
-Method: POST
-Request Headers:
-Authorization: Bearer <access_token>
+### Method: POST
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -673,9 +672,9 @@ Dislike Product
 Dislikes a specific product.
 
 ### ``` URL: /products/<int:product_id>/dislike ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -686,9 +685,9 @@ Add Product to Cart
 Adds a product to the user's cart.
 
 ### ``` URL: /products/cart/add ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -704,9 +703,9 @@ View Cart
 Retrieves the items in the user's cart.
 
 ### ``` URL: /products/cart ```
-Method: GET
+### Method: GET
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -732,9 +731,9 @@ Add Review
 Adds a review for a specific product.
 
 ### ``` URL: /api/products/<int:product_id>/reviews ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -750,7 +749,7 @@ Get Products by Category
 Retrieves a list of products belonging to a specific category.
 
 ### ``` URL: /products/<category> ```
-Method: GET
+### Method: GET
 ```
 Response:
 {
@@ -775,9 +774,9 @@ Place Order
 Places an order for the items in the user's cart.
 
 ### ``` URL: /api/place/order ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -788,9 +787,9 @@ Get Orders
 Retrieves a list of orders placed by the user.
 
 ### ``` URL: /api/orders ```
-Method: GET
+### Method: GET
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -814,9 +813,9 @@ Update Order
 Updates the details of a specific order.
 
 ### ``` URL: /api/orders/<int:order_id>/update ```
-Method: PUT
+### Method: PUT
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -832,7 +831,7 @@ Get Product Review
 Retrieves the review for a specific product.
 
 ### ``` URL: /product/<int:product_id>/review ```
-Method: GET
+### Method: GET
 ```
 Response:
 {
@@ -846,7 +845,7 @@ Get Product Ratings
 Retrieves a dictionary containing the ratings for each product keyed by product ID.
 
 ### ``` URL: /product/ratings ```
-Method: GET
+### Method: GET
 ```
 Response:
 {
@@ -861,7 +860,7 @@ User Registration
 Register a new user with the provided details.
 
 ### ``` URL: /api/register ```
-Method: POST
+### Method: POST
 ```
 Request Body:
 {
@@ -884,9 +883,9 @@ User Verification
 Verify a user's account. This endpoint requires admin privileges.
 
 ### ``` URL: /api/verify/<public_id> ```
-Method: PUT
+### Method: PUT
 Request Headers:
-Authorization: Bearer <admin_access_token>
+### Authorization: Bearer <admin_access_token>
 ```
 Response:
 {
@@ -897,9 +896,9 @@ User Login
 Authenticate and login a user.
 
 ### ``` URL: /api/login ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Basic <base64_encoded_credentials>
+### Authorization: Basic <base64_encoded_credentials>
 ```
 Response:
 {
@@ -911,9 +910,9 @@ User Logout
 Logout the currently logged-in user.
 
 ### ``` URL: /api/logout ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -926,9 +925,9 @@ Register Seller
 Register the current user as a seller.
 
 ### ``` URL: /api/sellers/register ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -939,9 +938,9 @@ Add Product
 Add a new product for the current seller.
 
 ### ``` URL: /api/sellers/products ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -960,9 +959,9 @@ Get Seller Products
 Get all products associated with the current seller.
 
 ### ``` URL: /api/sellers/products ```
-Method: GET
+### Method: GET
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -990,9 +989,9 @@ Update Product
 Update a product associated with the current seller.
 
 ### ``` URL: /api/seller/products/<id>/update ```
-Method: PUT
+### Method: PUT
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -1011,9 +1010,9 @@ Delete Product
 Delete a product associated with the current seller.
 
 ### ``` URL: /api/seller/products/<id>/delete ```
-Method: DELETE
+### Method: DELETE
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -1024,9 +1023,9 @@ Create Brand
 Create a new brand for the current seller.
 
 ### ``` URL: /brand/create ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -1042,9 +1041,9 @@ Update Brand
 Update a brand associated with the current seller.
 
 ### ``` URL: /brand/<brand_id>/update ```
-Method: PUT
+### Method: PUT
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -1060,9 +1059,9 @@ Delete Brand
 Delete a brand associated with the current seller.
 
 ### ``` URL: /brand/<brand_id>/delete ```
-Method: DELETE
+### Method: DELETE
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Response:
 {
@@ -1073,9 +1072,9 @@ Create Product
 Create a new product under a specific brand for the current seller.
 
 ### ``` URL: /brand/<brand_id>/add/product ```
-Method: POST
+### Method: POST
 Request Headers:
-Authorization: Bearer <access_token>
+### Authorization: Bearer <access_token>
 ```
 Request Body:
 {
@@ -1098,7 +1097,7 @@ View Sold Products
 Retrieve a list of products sold by the current seller.
 
 ### ``` URL: /products/sold ```
-Method: GET
+### Method: GET
 ```
 Request Headers:
 Authorization: Bearer <access_token>
@@ -1122,7 +1121,7 @@ Payment Ledger
 Retrieve the payment ledger for the current seller, including information about orders and customers.
 
 ### ``` URL: /payment_ledger ```
-Method: GET
+### Method: GET
 ```
 Request Headers:
 Authorization: Bearer <access_token>
